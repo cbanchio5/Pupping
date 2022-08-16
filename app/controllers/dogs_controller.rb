@@ -15,6 +15,11 @@ class DogsController < ApplicationController
     redirect_to user_dogs_path(current_user)
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+    @user = current_user
+  end
+
   private
 
   def dog_params
